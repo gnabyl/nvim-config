@@ -104,6 +104,15 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 -- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 -- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Always keep the cursor in the middle
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+-- Activate junk register to delete without replacing copied text
+vim.keymap.set('n', '<leader><leader>', '"_')
+-- Use system clipboard register
+vim.keymap.set('n', '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>d', '"+d')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
