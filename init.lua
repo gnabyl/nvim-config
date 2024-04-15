@@ -490,7 +490,7 @@ require('lazy').setup({
             },
           },
         },
-        jdtls = {},
+        java_language_server = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -517,9 +517,6 @@ require('lazy').setup({
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            if server_name == 'jdtls' then
-              require('java').setup()
-            end
             require('lspconfig')[server_name].setup(server)
           end,
         },
