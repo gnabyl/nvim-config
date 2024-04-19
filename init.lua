@@ -272,11 +272,11 @@ require('lazy').setup({
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          path_display = {
+            'smart',
+          },
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
@@ -337,7 +337,16 @@ require('lazy').setup({
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      -- {
+      --   'j-hui/fidget.nvim',
+      --   opts = {
+      --     progress = {
+      --       display = {
+      --         render_limit = 3,
+      --       },
+      --     },
+      --   },
+      -- },
 
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
@@ -490,7 +499,7 @@ require('lazy').setup({
             },
           },
         },
-        java_language_server = {},
+        jdtls = {},
       }
 
       -- Ensure the servers and tools above are installed
