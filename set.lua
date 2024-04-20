@@ -48,7 +48,7 @@ vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 500
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -106,16 +106,16 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 -- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- TMuX
-vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
+vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>', { desc = 'Open tmux-sessionizer' })
 
 -- Always keep the cursor in the middle
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 -- Activate junk register to delete without replacing copied text
-vim.keymap.set('n', '<leader><leader>', '"_')
+vim.keymap.set('n', '<leader><leader>', '"_', { desc = 'Activate junk register' })
 -- Use system clipboard register
-vim.keymap.set('n', '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>d', '"+d')
+vim.keymap.set('n', '<leader>y', '"+y', { desc = 'Copy to system clipboard' })
+vim.keymap.set('n', '<leader>d', '"+d', { desc = 'Delete to system clipboard' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -139,5 +139,5 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 -- NvimTree
-
-vim.keymap.set('n', '<leader>fit', ':NvimTreeFindFile<cr>')
+vim.keymap.set('n', '<leader>tf', ':NvimTreeFindFile<cr>', { desc = 'Focus current buffer in tree' })
+vim.keymap.set('n', '<leader>tt', ':NvimTreeToggle<cr>', { desc = 'Toggle tree' })
